@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta name="tiktok-developers-site-verification" content="DZ1PIiVGt0Oym69juiEFMK20YsOFN1el" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fonctionnalités — opencode auto post vpc</title>
+<meta name="description" content="Toutes les fonctionnalités de l'application de publication automatique TikTok, Facebook et YouTube : planification, formats de contenu, panneau de contrôle, sécurité.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="site-header"><div class="container nav">
+<a class="brand" href="index.html"><span class="logo">VPC</span> opencode auto post vpc</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">&#9776;</button>
+<nav class="nav-menu">
+  <a href="index.html">Accueil</a>
+  <a href="features.html">Fonctionnalités</a>
+  <a href="how-it-works.html">Comment ça marche</a>
+  <a href="download.html">Télécharger</a>
+  <a href="docs.html">Documentation</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html" class="btn btn-sm btn-outline">Contact</a>
+</nav>
+</div></header>
+
+<main class="container">
+<section class="page-head">
+  <h1>Fonctionnalités</h1>
+  <p class="sub">Un aperçu complet de ce que fait l'application pour gérer vos publications quotidiennes sur trois plateformes.</p>
+</section>
+
+<section class="section" style="padding-top:16px">
+  <div class="grid grid-2">
+    <div class="card"><div class="icon">&#9201;&#65039;</div><h3>Planificateur intégré</h3><p>Créneaux quotidiens configurables (par défaut 00h, 08h, 12h, 16h) avec rattrapage automatique en cas de coupure : si un créneau est manqué, il est rejoué sans doublon.</p></div>
+    <div class="card"><div class="icon">&#128218;</div><h3>Formats de contenu réutilisables</h3><p>Définissez des « formats » (déclaration, vidéo courte…) avec leur prompt, leurs heures, leurs réseaux et leur tier. La logique réutilisée est partagée entre le planificateur et le lancement manuel.</p></div>
+    <div class="card"><div class="icon">&#128422;</div><h3>Panneau de contrôle des publications</h3><p>Liste les publications en attente d'image, en échec ou en brouillon, avec la possibilité de les reprendre (avec ou sans nouvelle image), de les marquer brouillon ou de les annuler.</p></div>
+    <div class="card"><div class="icon">&#128200;</div><h3>Tableau de bord &amp; API locale</h3><p>Interface web locale (Flask) avec API : formats, planificateur, publications en attente, relance et annulation. Tout reste sur votre machine.</p></div>
+    <div class="card"><div class="icon">&#128190;</div><h3>Anti-doublon</h3><p>Chaque créneau est horodaté (<code>scheduled_for</code>) : une publication déjà faite à un créneau n'est jamais republiée. Les échecs partiels sont repris automatiquement.</p></div>
+    <div class="card"><div class="icon">&#128273;</div><h3>Génération de contenu</h3><p>Textes (légendes, déclarations, CTA) générés avec le modèle Gemini et aperçus d'images ; mode hors-ligne de secours si l'API est indisponible.</p></div>
+    <div class="card"><div class="icon">&#128444;&#65039;</div><h3>Gestion des médias</h3><p>Génération d'images avec fonds de marque, vérification de l'ajustement du texte, conversion en formats compatibles TikTok, Facebook et YouTube.</p></div>
+    <div class="card"><div class="icon">&#128274;</div><h3>Sécurité des secrets</h3><p>Jetons conservés dans le trousseau Windows (keyring) avec repli sur un fichier <code>.env</code> local. Aucun secret n'est jamais écrit dans le code ni le dépôt.</p></div>
+    <div class="card"><div class="icon">&#128293;</div><h3>Journalisation et reprise</h3><p>Chaque exécution est journalisée (état, réseaux, erreurs). En cas d'échec, les publications restent en file d'attente et peuvent être relancées depuis le panneau.</p></div>
+    <div class="card"><div class="icon">&#128752;</div><h3>Téléversement chunké TikTok</h3><p>Envoi des vidéos par morceaux (8 Mo) avec interrogation du statut jusqu'à finalisation — conforme à la Content Posting API (Direct Post).</p></div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <h2>Prêt à démarrer&nbsp;?</h2>
+    <p class="sub">Installez l'application sur votre PC Windows et connectez vos comptes en quelques minutes.</p>
+    <p><a class="btn" href="download.html">Télécharger l'application</a>&nbsp;&nbsp;<a class="btn btn-outline" href="docs.html">Lire la documentation</a></p>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer"><div class="container footer-grid">
+  <div>
+    <a class="brand" href="index.html"><span class="logo">VPC</span> opencode auto post vpc</a>
+    <p class="about" style="margin-top:12px">Application de bureau pour la publication automatique des vidéos de la page « Voix de Prospérité en Christ » sur TikTok, Facebook et YouTube.</p>
+  </div>
+  <div><h4>Produit</h4><ul>
+    <li><a href="features.html">Fonctionnalités</a></li>
+    <li><a href="how-it-works.html">Comment ça marche</a></li>
+    <li><a href="download.html">Télécharger</a></li>
+    <li><a href="docs.html">Documentation</a></li>
+  </ul></div>
+  <div><h4>Ressources</h4><ul>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="https://github.com/Paterne01/voix-de-prosperite-en-christ" target="_blank" rel="noopener">Code source (GitHub)</a></li>
+  </ul></div>
+  <div><h4>Légal</h4><ul>
+    <li><a href="terms.html">Conditions d'utilisation</a></li>
+    <li><a href="privacy.html">Politique de confidentialité</a></li>
+  </ul></div>
+</div>
+<div class="container copyright">© <span data-year>2026</span> Paterne BALAGIZI · Tous droits réservés · <a href="sitemap.xml">Plan du site</a></div>
+</footer>
+<script src="assets/main.js"></script>
+</body></html>
+

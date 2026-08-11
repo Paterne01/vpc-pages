@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta name="tiktok-developers-site-verification" content="DZ1PIiVGt0Oym69juiEFMK20YsOFN1el" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Documentation — opencode auto post vpc</title>
+<meta name="description" content="Documentation d'utilisation : configuration, planification des publications, gestion des secrets, reprise des publications en erreur et dépannage.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="site-header"><div class="container nav">
+<a class="brand" href="index.html"><span class="logo">VPC</span> opencode auto post vpc</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">&#9776;</button>
+<nav class="nav-menu">
+  <a href="index.html">Accueil</a>
+  <a href="features.html">Fonctionnalités</a>
+  <a href="how-it-works.html">Comment ça marche</a>
+  <a href="download.html">Télécharger</a>
+  <a href="docs.html">Documentation</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html" class="btn btn-sm btn-outline">Contact</a>
+</nav>
+</div></header>
+
+<main class="container">
+<section class="page-head">
+  <h1>Documentation</h1>
+  <p class="sub">Guide d'utilisation pas à pas : configuration initiale, planification, sécurité des secrets, reprise et dépannage.</p>
+</section>
+
+<article class="prose">
+  <h2>1. Configuration initiale</h2>
+  <p>Copiez le fichier d'exemple puis renseignez vos valeurs :</p>
+  <pre><code>copy config.example.json config.json</code></pre>
+  <p>Principaux réglages du <code>config.json</code>&nbsp;:</p>
+  <ul>
+    <li><code>timezone</code> : fuseau horaire (défaut <code>Africa/Nairobi</code>).</li>
+    <li><code>schedule</code> et <code>schedule_formats</code> : créneaux horaires et format associé à chacun.</li>
+    <li><code>publishers</code> : active ou désactive chaque réseau (facebook, youtube, tiktok).</li>
+    <li><code>manual_schedule</code> : créneaux de relance manuelle.</li>
+  </ul>
+
+  <h2>2. Secrets et jetons</h2>
+  <p>Copiez <code>.env.example</code> vers <code>.env</code> et remplissez vos clés (Gemini, jeton Page Facebook, TikTok). L'ordre de lecture est : trousseau Windows (keyring) &rarr; <code>.env</code> local. Les jetons ne sont jamais écrits dans le code ni le dépôt.</p>
+  <ul>
+    <li><code>GEMINI_API_KEY</code> : génération des textes et aperçus.</li>
+    <li><code>FACEBOOK_PAGE_TOKEN</code> : publication sur la Page Facebook.</li>
+    <li><code>TIKTOK_CLIENT_KEY</code> / <code>TIKTOK_CLIENT_SECRET</code> : app TikTok (Content Posting API).</li>
+    <li><code>TIKTOK_ACCESS_TOKEN</code> et jetons associés : obtenus après autorisation OAuth dans l'interface.</li>
+  </ul>
+
+  <h2>3. Planification</h2>
+  <p>Le planificateur (APScheduler) relit les formats actifs de la base de données et crée un travail par créneau. Les jobs sont persistés (<code>SQLAlchemyJobStore</code>) : ils survivent aux redémarrages.</p>
+  <p>Garde-fou anti-doublon : chaque publication porte un <code>scheduled_for</code> = <code>dateTcréneau</code>. Un créneau déjà publié est ignoré&nbsp;; un créneau en échec partiel (<code>partial</code>) est relancé.</p>
+
+  <h2>4. Panneau de contrôle</h2>
+  <p>Depuis <code>http://localhost:5000</code>, la section « En attente (à traiter) » liste les publications en attente d'image, en échec ou en brouillon. Vous pouvez&nbsp;:</p>
+  <ul>
+    <li><strong>Reprendre</strong> : relance la publication du contenu stocké (option : fournir une image manquante).</li>
+    <li><strong>Brouillon</strong> : passe la publication en brouillon sans publier.</li>
+    <li><strong>Annuler</strong> : clôt définitivement la publication.</li>
+  </ul>
+
+  <h2>5. Dépannage</h2>
+  <table>
+    <tr><th>Symptôme</th><th>Cause probable / solution</th></tr>
+    <tr><td>La publication reste « en attente »</td><td>Image manquante ou échec réseau. Ajoutez une image via « Reprendre ».</td></tr>
+    <tr><td>TikTok n'accepte pas la vidéo</td><td>Vérifiez le <code>privacy_level</code> (SELF_ONLY en test) et le drapeau AIGC (<code>is_aigc</code>).</td></tr>
+    <tr><td>Token expiré</td><td>Refaites l'autorisation OAuth depuis l'interface.</td></tr>
+    <tr><td>Créneau ignoré</td><td>Le garde-fou anti-doublon l'a déjà traité. Consultez le journal (<code>Logs/</code>).</td></tr>
+  </table>
+</article>
+
+<section class="section">
+  <div class="container">
+    <p><a class="btn" href="faq.html">FAQ</a>&nbsp;&nbsp;<a class="btn btn-outline" href="contact.html">Besoin d'aide ?</a></p>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer"><div class="container footer-grid">
+  <div>
+    <a class="brand" href="index.html"><span class="logo">VPC</span> opencode auto post vpc</a>
+    <p class="about" style="margin-top:12px">Application de bureau pour la publication automatique des vidéos de la page « Voix de Prospérité en Christ » sur TikTok, Facebook et YouTube.</p>
+  </div>
+  <div><h4>Produit</h4><ul>
+    <li><a href="features.html">Fonctionnalités</a></li>
+    <li><a href="how-it-works.html">Comment ça marche</a></li>
+    <li><a href="download.html">Télécharger</a></li>
+    <li><a href="docs.html">Documentation</a></li>
+  </ul></div>
+  <div><h4>Ressources</h4><ul>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="https://github.com/Paterne01/voix-de-prosperite-en-christ" target="_blank" rel="noopener">Code source (GitHub)</a></li>
+  </ul></div>
+  <div><h4>Légal</h4><ul>
+    <li><a href="terms.html">Conditions d'utilisation</a></li>
+    <li><a href="privacy.html">Politique de confidentialité</a></li>
+  </ul></div>
+</div>
+<div class="container copyright">© <span data-year>2026</span> Paterne BALAGIZI · Tous droits réservés · <a href="sitemap.xml">Plan du site</a></div>
+</footer>
+<script src="assets/main.js"></script>
+</body></html>
+

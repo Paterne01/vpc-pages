@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta name="tiktok-developers-site-verification" content="DZ1PIiVGt0Oym69juiEFMK20YsOFN1el" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Questions fréquentes — opencode auto post vpc</title>
+<meta name="description" content="Réponses aux questions fréquentes sur l'application de publication automatique : gratuité, plateformes, sécurité, installation, fonctionnalités.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="site-header"><div class="container nav">
+<a class="brand" href="index.html"><span class="logo">VPC</span> opencode auto post vpc</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">&#9776;</button>
+<nav class="nav-menu">
+  <a href="index.html">Accueil</a>
+  <a href="features.html">Fonctionnalités</a>
+  <a href="how-it-works.html">Comment ça marche</a>
+  <a href="download.html">Télécharger</a>
+  <a href="docs.html">Documentation</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html" class="btn btn-sm btn-outline">Contact</a>
+</nav>
+</div></header>
+
+<main class="container">
+<section class="page-head">
+  <h1>Questions fréquentes</h1>
+  <p class="sub">Tout ce que vous devez savoir avant d'installer l'application.</p>
+</section>
+
+<section class="section" style="padding-top:16px">
+  <div class="faq">
+    <details><summary>L'application est-elle gratuite&nbsp;?</summary><p>Oui. L'application est gratuite pour son usage prévu (le propriétaire de la page). Certaines fonctionnalités avancées sont réservées à un tier « pro » ; le blocage est transparent (publication ignorée avec motif).</p></details>
+    <details><summary>Sur quelles plateformes puis-je publier&nbsp;?</summary><p>TikTok (Content Posting API, Direct Post), Facebook (Reels et images via l'API Graph) et YouTube (téléversement vidéo). Chaque réseau peut être activé ou désactivé dans la configuration.</p></details>
+    <details><summary>Mes données et vidéos sont-elles envoyées à un serveur externe&nbsp;?</summary><p>Non. L'application est locale&nbsp;: textes, images et vidéos sont générés et stockés sur votre ordinateur. Seules les publications sont envoyées, avec votre autorisation, aux plateformes que vous avez configurées (TikTok, Facebook, YouTube) et au service de génération de texte que vous utilisez.</p></details>
+    <details><summary>Comment sont protégés mes jetons d'accès&nbsp;?</summary><p>Les jetons OAuth sont chiffrés dans le gestionnaire de secrets de Windows (keyring), avec repli sur un fichier <code>.env</code> local jamais versionné. Ils ne sont jamais écrits en clair dans le code ni le dépôt public.</p></details>
+    <details><summary>Puis-je modifier les heures de publication&nbsp;?</summary><p>Oui. Les créneaux quotidiens sont configurables (défaut : 00h, 08h, 12h, 16h). Vous pouvez aussi définir des formats avec leurs propres heures et réseaux.</p></details>
+    <details><summary>Que se passe-t-il si mon ordinateur est éteint à l'heure d'un créneau&nbsp;?</summary><p>Le planificateur rattrape automatiquement les créneaux manqués au prochain démarrage, sans republier deux fois le même créneau (garde-fou anti-doublon).</p></details>
+    <details><summary>Une publication a échoué, comment la relancer&nbsp;?</summary><p>Ouvrez le tableau de bord local (<code>http://localhost:5000</code>), section « En attente ». Vous pouvez reprendre la publication (avec une image si elle manque), la passer en brouillon ou l'annuler.</p></details>
+    <details><summary>Puis-je tester sans publier réellement&nbsp;?</summary><p>Oui. Le lancement en mode sec (dry-run) prépare et vérifie le contenu sans rien publier. Utile avant la première mise en production.</p></details>
+    <details><summary>Quelle connexion TikTok est requise&nbsp;?</summary><p>L'application utilise la Content Posting API (Direct Post) de votre propre application TikTok, avec les scopes <code>video.publish</code> et <code>user.info.basic</code>. La publication se fait uniquement sur le compte que vous autorisez.</p></details>
+    <details><summary>Windows est-il obligatoire&nbsp;?</summary><p>L'application cible Windows (scripts d'installation et de lancement fournis). Le code est en Python et peut être adapté à d'autres systèmes.</p></details>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <h2>Vous n'avez pas trouvé votre réponse&nbsp;?</h2>
+    <p class="sub">Écrivez-nous, nous vous répondrons dans les plus brefs délais.</p>
+    <p><a class="btn" href="contact.html">Nous contacter</a></p>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer"><div class="container footer-grid">
+  <div>
+    <a class="brand" href="index.html"><span class="logo">VPC</span> opencode auto post vpc</a>
+    <p class="about" style="margin-top:12px">Application de bureau pour la publication automatique des vidéos de la page « Voix de Prospérité en Christ » sur TikTok, Facebook et YouTube.</p>
+  </div>
+  <div><h4>Produit</h4><ul>
+    <li><a href="features.html">Fonctionnalités</a></li>
+    <li><a href="how-it-works.html">Comment ça marche</a></li>
+    <li><a href="download.html">Télécharger</a></li>
+    <li><a href="docs.html">Documentation</a></li>
+  </ul></div>
+  <div><h4>Ressources</h4><ul>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="https://github.com/Paterne01/voix-de-prosperite-en-christ" target="_blank" rel="noopener">Code source (GitHub)</a></li>
+  </ul></div>
+  <div><h4>Légal</h4><ul>
+    <li><a href="terms.html">Conditions d'utilisation</a></li>
+    <li><a href="privacy.html">Politique de confidentialité</a></li>
+  </ul></div>
+</div>
+<div class="container copyright">© <span data-year>2026</span> Paterne BALAGIZI · Tous droits réservés · <a href="sitemap.xml">Plan du site</a></div>
+</footer>
+<script src="assets/main.js"></script>
+</body></html>
+

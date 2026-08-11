@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://paterne01.github.io/vpc-pages/sitemap.xml

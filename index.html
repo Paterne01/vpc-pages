@@ -1,23 +1,129 @@
 <!doctype html>
 <html lang="fr"><head>
-<meta name="tiktok-developers-site-verification" content="DZ1PIiVGt0Oym69juiEFMK20YsOFN1el" /><meta charset="utf-8">
+<meta name="tiktok-developers-site-verification" content="DZ1PIiVGt0Oym69juiEFMK20YsOFN1el" />
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>opencode auto post vpc — Publication automatique TikTok</title>
-<style>
-body{font-family:Segoe UI,system-ui,sans-serif;margin:0;background:#071a36;color:#ecf2fb}
-main{max-width:820px;margin:auto;padding:40px 24px}
-h1{color:#d9ae58} a{color:#d9ae58}
-.pill{display:inline-block;background:#12396b;padding:6px 14px;border-radius:20px;margin:4px}
-footer{margin-top:48px;color:#9db2d0;font-size:13px}
-</style>
-</head><body><main>
-<h1>opencode auto post vpc</h1>
-<p>Application de bureau locale (Windows) qui permet à l'auteur de la page « Voix de Prospérité en Christ » de publier automatiquement ses vidéos courtes sur TikTok, en complément de Facebook et YouTube.</p>
-<p>Fonctionnement : l'utilisateur lance la publication depuis l'interface locale, se connecte via OAuth TikTok (Content Posting API), et l'application téléverse puis finalise la vidéo sur son propre compte TikTok.</p>
-<div><span class="pill">Content Posting API</span><span class="pill">Scope : video.publish</span><span class="pill">Scope : user.info.basic</span></div>
-<footer>
-<p>© <span id="y">2026</span> Paterne BALAGIZI · <a href="terms.html">Conditions d'utilisation</a> · <a href="privacy.html">Politique de confidentialité</a></p>
-<p>Ce site héberge uniquement les pages légales de l'application. Aucune donnée personnelle n'est collectée par ce site.</p>
+<title>opencode auto post vpc — Publication automatique de vidéos chrétiennes sur TikTok, Facebook et YouTube</title>
+<meta name="description" content="Application de bureau Windows qui publie automatiquement les vidéos courtes et les déclarations de la page « Voix de Prospérité en Christ » sur TikTok, Facebook et YouTube, selon un planning quotidien.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="site-header"><div class="container nav">
+<a class="brand" href="index.html"><span class="logo">VPC</span> opencode auto post vpc</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">&#9776;</button>
+<nav class="nav-menu">
+  <a href="index.html">Accueil</a>
+  <a href="features.html">Fonctionnalités</a>
+  <a href="how-it-works.html">Comment ça marche</a>
+  <a href="download.html">Télécharger</a>
+  <a href="docs.html">Documentation</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html" class="btn btn-sm btn-outline">Contact</a>
+</nav>
+</div></header>
+
+<main>
+<section class="hero container">
+  <div class="kicker">Application de bureau · Windows</div>
+  <h1>Publiez vos vidéos sur TikTok, Facebook et YouTube<br><span class="accent">automatiquement, chaque jour</span></h1>
+  <p class="lead">« opencode auto post vpc » est l'outil officiel de la page <strong>Voix de Prospérité en Christ</strong>. Il génère et programme les publications quotidiennes (déclarations, enseignements, vidéos courtes) et les envoie sur vos plateformes sans intervention manuelle.</p>
+  <div class="hero-actions">
+    <a class="btn" href="download.html">Télécharger l'application</a>
+    <a class="btn btn-outline" href="how-it-works.html">Voir comment ça marche</a>
+  </div>
+  <p class="hero-note">Gratuit · Installation locale · Votre contenu reste sur votre ordinateur</p>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Pourquoi utiliser cette application&nbsp;?</h2>
+    <p class="sub">Un seul outil pour maintenir une présence quotidienne sur trois plateformes, sans y passer des heures.</p>
+    <div class="grid grid-3">
+      <div class="card"><div class="icon">&#128197;</div><h3>Planification automatique</h3><p>Les publications partent aux créneaux que vous avez définis (matin, midi, soir) : plus besoin d'être présent pour poster.</p></div>
+      <div class="card"><div class="icon">&#128241;</div><h3>3 plateformes en une fois</h3><p>Le même contenu est adapté et envoyé sur TikTok (Content Posting API), Facebook (Reels &amp; images) et YouTube (vidéos).</p></div>
+      <div class="card"><div class="icon">&#128273;</div><h3>Contenu de marque</h3><p>Vidéos courtes avec fonds, textes bibliques, légendes et appels à l'action générés selon vos formats préférés.</p></div>
+      <div class="card"><div class="icon">&#128736;&#65039;</div><h3>100&nbsp;% local</h3><p>Application de bureau installée sur votre PC : les textes, images et vidéos sont générés et stockés sur votre machine.</p></div>
+      <div class="card"><div class="icon">&#128274;</div><h3>Sécurité des accès</h3><p>Vos jetons OAuth sont chiffrés dans le gestionnaire de secrets de Windows. Jamais de clé en clair dans les fichiers du projet.</p></div>
+      <div class="card"><div class="icon">&#128202;</div><h3>Panneau de contrôle</h3><p>Suivez les publications en attente, en échec ou en brouillon, et reprenez-les en un clic depuis l'interface locale.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <h2>Comment ça marche en 4 étapes</h2>
+    <p class="sub">Le flux complet, de la génération du contenu à la publication sur votre profil TikTok.</p>
+    <div class="steps">
+      <div class="step"><h3>Connectez vos comptes</h3><p>Vous autorisez une seule fois l'accès à vos pages via le flux OAuth officiel de chaque plateforme (TikTok, Facebook, YouTube).</p></div>
+      <div class="step"><h3>Définissez vos formats et créneaux</h3><p>Choisissez les types de publications (déclaration, vidéo courte) et les heures de diffusion quotidiennes.</p></div>
+      <div class="step"><h3>L'application génère le contenu</h3><p>À chaque créneau, elle prépare le texte, l'image ou la vidéo selon vos formats, puis téléverse et finalise la publication.</p></div>
+      <div class="step"><h3>Vos vidéos sont en ligne</h3><p>Vous retrouvez chaque publication sur votre profil TikTok (et Facebook/YouTube) à l'heure prévue. Le panneau de contrôle garde l'historique.</p></div>
+    </div>
+    <p style="margin-top:24px"><a class="btn" href="how-it-works.html">Détail du fonctionnement</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Intégrations officielles</h2>
+    <p class="sub">L'application utilise les API officielles des plateformes, avec votre autorisation explicite.</p>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>TikTok</h3>
+        <p>Publication directe via la <strong>Content Posting API</strong> (Direct Post), après connexion OAuth sur votre propre compte.</p>
+        <div>
+          <span class="pill gold">Content Posting API</span>
+          <span class="pill">video.publish</span>
+          <span class="pill">user.info.basic</span>
+        </div>
+      </div>
+      <div class="card"><h3>Facebook</h3><p>Publication des Reels et des images sur votre Page, via l'API Graph officielle.</p><span class="pill">API Graph</span></div>
+      <div class="card"><h3>YouTube</h3><p>Téléversement des vidéos sur votre chaîne (youtube-uploader officiel).</p><span class="pill">YouTube Data API</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="grid grid-2">
+      <div>
+        <h2>Téléchargement</h2>
+        <p class="sub">L'application s'installe en quelques minutes sur Windows. Le code source est ouvert et disponible sur GitHub.</p>
+        <p><a class="btn" href="download.html">Voir les instructions d'installation</a></p>
+      </div>
+      <div>
+        <h2>Une question&nbsp;?</h2>
+        <p class="sub">Consultez la foire aux questions ou écrivez-nous directement.</p>
+        <p><a class="btn btn-outline" href="faq.html">Lire la FAQ</a>&nbsp;&nbsp;<a class="btn btn-outline" href="contact.html">Nous contacter</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer"><div class="container footer-grid">
+  <div>
+    <a class="brand" href="index.html"><span class="logo">VPC</span> opencode auto post vpc</a>
+    <p class="about" style="margin-top:12px">Application de bureau pour la publication automatique des vidéos de la page « Voix de Prospérité en Christ » sur TikTok, Facebook et YouTube.</p>
+  </div>
+  <div><h4>Produit</h4><ul>
+    <li><a href="features.html">Fonctionnalités</a></li>
+    <li><a href="how-it-works.html">Comment ça marche</a></li>
+    <li><a href="download.html">Télécharger</a></li>
+    <li><a href="docs.html">Documentation</a></li>
+  </ul></div>
+  <div><h4>Ressources</h4><ul>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="https://github.com/Paterne01/voix-de-prosperite-en-christ" target="_blank" rel="noopener">Code source (GitHub)</a></li>
+  </ul></div>
+  <div><h4>Légal</h4><ul>
+    <li><a href="terms.html">Conditions d'utilisation</a></li>
+    <li><a href="privacy.html">Politique de confidentialité</a></li>
+  </ul></div>
+</div>
+<div class="container copyright">© <span data-year>2026</span> Paterne BALAGIZI · Tous droits réservés · <a href="sitemap.xml">Plan du site</a></div>
 </footer>
-</main><script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+<script src="assets/main.js"></script>
 </body></html>
+

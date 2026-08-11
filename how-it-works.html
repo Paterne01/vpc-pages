@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta name="tiktok-developers-site-verification" content="DZ1PIiVGt0Oym69juiEFMK20YsOFN1el" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Comment ça marche — opencode auto post vpc</title>
+<meta name="description" content="Le fonctionnement détaillé de l'application : connexion des comptes, planification, génération de contenu et publication TikTok via la Content Posting API.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="site-header"><div class="container nav">
+<a class="brand" href="index.html"><span class="logo">VPC</span> opencode auto post vpc</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">&#9776;</button>
+<nav class="nav-menu">
+  <a href="index.html">Accueil</a>
+  <a href="features.html">Fonctionnalités</a>
+  <a href="how-it-works.html">Comment ça marche</a>
+  <a href="download.html">Télécharger</a>
+  <a href="docs.html">Documentation</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html" class="btn btn-sm btn-outline">Contact</a>
+</nav>
+</div></header>
+
+<main class="container">
+<section class="page-head">
+  <h1>Comment ça marche</h1>
+  <p class="sub">Le flux complet, étape par étape — de la connexion de vos comptes jusqu'à la vidéo en ligne sur votre profil TikTok.</p>
+</section>
+
+<section class="section" style="padding-top:16px">
+  <div class="steps">
+    <div class="step"><h3>Installation locale</h3><p>L'application s'installe sur votre PC Windows. Elle est 100&nbsp;% locale : vos textes, images et vidéos sont générés et conservés sur votre machine.</p></div>
+    <div class="step"><h3>Connexion de vos comptes (OAuth)</h3><p>Pour chaque plateforme (TikTok, Facebook, YouTube), vous vous connectez une seule fois via le flux d'autorisation officiel. L'application ne reçoit l'accès qu'à <em>votre propre</em> compte ou page.</p></div>
+    <div class="step"><h3>Configuration des formats et créneaux</h3><p>Vous définissez les types de publications (déclaration, vidéo courte), les réseaux cibles et les heures quotidiennes. Par défaut : 00h, 08h, 12h et 16h.</p></div>
+    <div class="step"><h3>Génération du contenu à chaque créneau</h3><p>Le planificateur se déclenche à l'heure prévue : le texte de la légende est généré, l'image ou la vidéo courte est produite selon le format choisi, puis le contenu est préparé pour chaque réseau.</p></div>
+    <div class="step"><h3>Publication sur TikTok (Content Posting API)</h3><p>L'application initialise l'upload, téléverse la vidéo en plusieurs morceaux, puis finalise la publication. Le statut est suivi jusqu'à confirmation. Même logique pour Facebook (Reels/images) et YouTube (téléversement).</p></div>
+    <div class="step"><h3>Suivi et reprise</h3><p>Chaque exécution est journalisée. Si un envoi échoue, la publication reste « en attente » dans le panneau de contrôle : vous pouvez la reprendre, la passer en brouillon ou l'annuler.</p></div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <h2>Intégration TikTok — détails techniques</h2>
+    <p class="sub">Conformité avec les règles de la plateforme et transparence sur les autorisations utilisées.</p>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Produits et scopes utilisés</h3>
+        <ul style="padding-left:18px;color:var(--muted)">
+          <li><strong>Content Posting API</strong> (Direct Post) : publie la vidéo directement sur le profil de l'auteur.</li>
+          <li><strong>Scope video.publish</strong> : initier, téléverser et finaliser la publication d'une vidéo.</li>
+          <li><strong>Scope user.info.basic</strong> : afficher le nom du compte connecté dans l'interface locale et confirmer la session.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Respect de la vie privée</h3>
+        <p>L'application ne collecte aucune donnée d'utilisateurs tiers. Elle ne publie que sur le compte de son propriétaire, avec son autorisation. Les jetons OAuth sont chiffrés localement.</p>
+        <div>
+          <span class="pill gold">Content Posting API</span>
+          <span class="pill">video.publish</span>
+          <span class="pill">user.info.basic</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Et maintenant&nbsp;?</h2>
+    <p class="sub">Téléchargez l'application, suivez le guide d'installation et lancez votre première publication.</p>
+    <p><a class="btn" href="download.html">Télécharger</a>&nbsp;&nbsp;<a class="btn btn-outline" href="docs.html">Guide d'installation</a>&nbsp;&nbsp;<a class="btn btn-outline" href="faq.html">FAQ</a></p>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer"><div class="container footer-grid">
+  <div>
+    <a class="brand" href="index.html"><span class="logo">VPC</span> opencode auto post vpc</a>
+    <p class="about" style="margin-top:12px">Application de bureau pour la publication automatique des vidéos de la page « Voix de Prospérité en Christ » sur TikTok, Facebook et YouTube.</p>
+  </div>
+  <div><h4>Produit</h4><ul>
+    <li><a href="features.html">Fonctionnalités</a></li>
+    <li><a href="how-it-works.html">Comment ça marche</a></li>
+    <li><a href="download.html">Télécharger</a></li>
+    <li><a href="docs.html">Documentation</a></li>
+  </ul></div>
+  <div><h4>Ressources</h4><ul>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="https://github.com/Paterne01/voix-de-prosperite-en-christ" target="_blank" rel="noopener">Code source (GitHub)</a></li>
+  </ul></div>
+  <div><h4>Légal</h4><ul>
+    <li><a href="terms.html">Conditions d'utilisation</a></li>
+    <li><a href="privacy.html">Politique de confidentialité</a></li>
+  </ul></div>
+</div>
+<div class="container copyright">© <span data-year>2026</span> Paterne BALAGIZI · Tous droits réservés · <a href="sitemap.xml">Plan du site</a></div>
+</footer>
+<script src="assets/main.js"></script>
+</body></html>
+
